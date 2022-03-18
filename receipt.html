@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="receiptstyles.css">
+    <title>Receipt | SunbeamCars</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">SunbeamCars Inc.</a>
+        </div>
+        <div class="aboutus">
+            <a href="aboutus.html">About Us</a>
+        </div>
+        <div class="login">
+            <a href="#">Log in</a>
+        </div>
+    </header>
+
+    <div class="photo"></div>
+<section class="form-receipt">
+    <div class="form-details">
+    <h2>Thanks! We will have the car ready for you!</h2><br>
+    <div id="form"></div>
+<button type="submit" class="print-button">Print</button>
+</div>
+<div class="receipt">
+    <h1>Rental information</h1>
+    <div id="formoutput">
+    </div>
+    <h3>Accessories:</h3>
+    <div id="output"></div>
+</div>
+</section>
+
+<script src="userinfo2.js"></script>
+<script src="userinfo.js"></script>
+
+
+  
+
+    
+<script>
+        const output = document.getElementById("output");
+
+        // Get shopping list from sesstionstorage
+        const shoppinglist = JSON.parse(sessionStorage.getItem("goods"));
+
+        // Show every item on shopping list to user
+        for (const item of shoppinglist) {
+            output.insertAdjacentHTML("beforeend", `${item}<br>`);
+        }
+
+        output.insertAdjacentHTML("beforeend", `<br><b>Accessories total:</b> ${sessionStorage.getItem("accessories")} incl. VAT`);
+    </script>
+
+</body>
+
+</html>

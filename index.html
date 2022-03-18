@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunbeamCars</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="#">SunbeamCars Inc.</a>
+        </div>
+        <div class="aboutus">
+            <a href="aboutus.html">About Us</a>
+        </div>
+        <div class="login">
+            <a href="#">Log in</a>
+        </div>
+    </header>
+        <main>
+            <form id="form">
+                <h1>Find the car that suits you</h1>
+                <section class="form">
+                    <div class="insert-box">
+                        <label for="arrivalfield" class="form-text">I pick it up:</label>
+                        <input type="date" id="arrivalfield" name="pick-up" required>
+                    </div>
+                    <div class="insert-box">
+                        <label for="departurefield" class="form-text">I hand it in:</label>
+                        <input type="date" id="departurefield" name="hand-in" required>
+                    </div>
+                    <div class="insert-box">
+                        <label for="peoplefield" class="form-text">Number of people:</label>
+                        <input type="number" id="peoplefield" name="quantity" set="1" min="1" max="7" required>
+                    </div>
+                    <div class="insert-box">
+                        <label for="suitcasefield" class="form-text">Number of suitcases:</label>
+                        <select type="selection" id="suitcasefield" name="quantity1" required>
+                            <option value="0">0 - only a bag</option>
+                            <option value="1">1 suitcase</option>
+                            <option value="2">2 suitcases</option>
+                            <option value="3">3 suitcases</option>
+                            <option value="4">4 suitcases</option>
+                        </select>
+                    </div>
+                </section>
+                <button class="form-button" type="submit" id="search">Search</button>
+            </form>
+           
+        </main>
+
+
+    
+
+    <template  id="cardsOutput">
+        <section class="cards-wrap">
+            <div class="cards" id="budgetCar">
+                <div>
+                    <img>
+                </div>
+                <div class="carName"></div>
+                <div>
+                    <div class="carCategory">Category: </div>
+                    <div class="peopleAmount">People: </div>
+                    <div class="suitcaseAmount">Suitcases: </div>
+                    <div class="comfort">Comfort: </div>
+                </div>
+                <div class="price-box">
+                    <div class="carPrice"></div>
+                    <button id="button"><a href="#" class="link">Book Now </a></button>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <section id="output" class="output"></section>
+    
+    <script src="javascript.js"></script>
+  
+</body>
+
+</html>

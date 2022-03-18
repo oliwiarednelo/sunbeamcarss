@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page2styles.css">
+    <title>Accessories | SunbeamCars</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">SunbeamCars Inc.</a>
+        </div>
+        <div class="aboutus">
+            <a href="aboutus.html">About Us</a>
+        </div>
+        <div class="login">
+            <a href="#">Log in</a>
+        </div>
+    </header>
+
+    <div class="photo"></div>
+
+    <section>
+        <div class="transferred-data">
+            <h1>Well Chosen!</h1>
+            <div id="output"></div>
+        </div>
+        <form id="form">
+            
+                <h3>Select accessories (excl. VAT)</h3>
+                <br>
+                <input type="checkbox" data-item="SecondDriver" class="acclist" value="199.00"
+                    onchange="calculateTotal(this, this.value)">Second driver dkr. 199.00<br>
+                <input type="checkbox" data-item="ChildSeat1" class="acclist" value="155.00"
+                    onchange="calculateTotal(this, this.value)">Child seat (5-12 year), dkr. 155.00<br>
+                <input type="checkbox" data-item="Roadeside aid" class="acclist" value="120.00"
+                    onchange="calculateTotal(this, this.value)">Roadeside Aid, dkr. 120.00<br>
+                <input type="checkbox" data-item="BabySeat" class="acclist" value="100.00"
+                    onchange="calculateTotal(this, this.value)">Baby seat (0-1 year), dkr. 100.00<br>
+                <input type="checkbox" data-item="ChildSeat2" class="acclist" value="140.00"
+                    onchange="calculateTotal(this, this.value)">Child seat (1-4 year), dkr. 140.00<br>
+                <input type="checkbox" data-item="GPSnavigation" class="acclist" value="250.00"
+                    onchange="calculateTotal(this, this.value)">GPS navigation, dkr. 250.00<br>
+                <input type="checkbox" data-item="SnowChains" class="acclist" value="188.00"
+                    onchange="calculateTotal(this, this.value)">Snow chains, dkr. 188.00<br>
+                <br>
+                <button type="submit">Continue</button>
+          
+        </form>
+        <div id="totaloutput"></div>
+    </section>
+
+
+    <script>
+        const url = window.location.search;
+        const urldata = new URLSearchParams(url);
+const carName = urldata.get('carChoice');
+sessionStorage.setItem("carName1", carName);
+const carPrice = urldata.get('carPrice');
+sessionStorage.setItem("carPrice1", carPrice);
+let accessoriesTotal = 0.00;
+const template = `
+        <h2>${urldata.get('carChoice')}</h2>
+        <p>Pick up date: ${urldata.get('pickUpDate')}</p>
+        <p>Departure Date: ${urldata.get('departureDate')}</p>
+        <p>Days: ${urldata.get('days')}</p>
+        <p>Car rental Cost: ${urldata.get('carPrice')} DKK</p>`
+
+
+        const output = document.getElementById("output");
+        output.insertAdjacentHTML("beforeend", template);
+    </script>
+<script src="accessories-calculation.js"></script>
+</body>
+
+</html>

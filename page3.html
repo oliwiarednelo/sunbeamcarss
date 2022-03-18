@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page3styles.css">
+    <title>Your information | SunbeamCars</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">SunbeamCars Inc.</a>
+        </div>
+        <div class="aboutus">
+            <a href="aboutus.html">About Us</a>
+        </div>
+        <div class="login">
+            <a href="#">Log in</a>
+        </div>
+    </header>
+
+    <div class="photo"></div>
+
+    <section class="details-section">
+        <form id="form" class="form-info">
+            <h2>Your information</h2>
+            <div class="form">
+                <div class="insert-box">
+                    <label for="firstName" class="form-text">First name:</label>
+                    <input type="text" id="firstName" name="name" required>
+                </div>
+                <div class="insert-box">
+                    <label for="lastName" class="form-text">Last name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="insert-box">
+                    <label for="streetName" class="form-text">Street name:</label>
+                    <input type="text" id="streetName" name="streetName" required>
+                </div>
+                <div class="insert-box">
+                    <label for="numberFloor" class="form-text">Number/Floor:</label>
+                    <input type="text" id="numberFloor" name="numberFloor" required>
+                </div>
+                <div class="insert-box">
+                    <label for="postalandcity">Postal code and city:</label>
+                    <input type="text" id="postalandcity" list="codesandcities" required>
+                </div>
+                <div><input type="checkbox" data-item="SecondDriver" class="slist" value="1" required>I am 18 years old
+                </div>
+            </div>
+            <button type="submit" class="form-button">Book now</button>
+        </form>
+        <datalist id="codesandcities"></datalist>
+        <div class="rental-info">
+            <h1>Rental information</h1>
+            <div id="formoutput">
+            </div>
+            <div class="acc">
+            <h3>Accessories:</h3>
+            <div id="output"></div>
+        </div>
+        </div>
+
+        </section>
+
+        <script src="formdata.js"></script>
+    <script src="userinfo.js"></script>
+
+    
+<script>
+        const output = document.getElementById("output");
+
+        // Get shopping list from sesstionstorage
+        const shoppinglist = JSON.parse(sessionStorage.getItem("goods"));
+
+        // Show every item on shopping list to user
+        for (const item of shoppinglist) {
+            output.insertAdjacentHTML("beforeend", `${item}<br>`);
+        }
+
+        output.insertAdjacentHTML("beforeend", `<br><b>Accessories total:</b> ${sessionStorage.getItem("accessories")} incl. VAT`);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+* {
+    font-family: Helvetica Neue;
+}
+
+header {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+ align-items: center;
+   height: 60px;
+
+}
+
+
+.logo a{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    font-family: "Helvetica Neue";
+    font-weight: bold;
+}
+
+.login a {
+    text-decoration: none;
+    color: black; 
+    font-size: 18px;
+    font-family: "Helvetica Neue";
+    font-weight: 500;
+}
+
+.aboutus a{
+    text-decoration: none;
+    color: black;
+}
+
+.photo {
+   
+    background-image: url("images/pexels-ryan-west-1719648.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 200px;
+    margin-top: 0%;
+}
+
+
+
+
+
+.rental-info {
+
+   margin-left: 10%;
+margin-top: 10px;
+width: 400px;
+float: right;
+text-align: left;
+background-color: rgb(240, 240, 240);
+padding-left: 30px;
+padding-right: 30px;
+padding-bottom: 30px;
+
+}
+
+
+
+
+
+
+.details-section{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+form {
+    position: relative;
+    height: 400px;
+    width: 30%;
+    border: 2px dashed black;
+  margin-top: 20px;
+    text-align: left;
+
+
+}
+
+#form h2 {
+margin-left: 27px;
+padding-top: 20px;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 20px;
+    padding: 30px;
+    text-align: left;
+ padding-top: 10px;
+}
+
+.form-text {
+    display: block;
+    font-size: 17px;
+}
+
+button {
+    padding: 10px 25px;
+    background-color: black;
+    color: white;
+font-family: Helvetica Neue;
+margin-top: 40px;
+border: black;
+border-radius: 5px;
+}
+
+.form-button{
+margin-top: 20px;
+    margin-left: 28px;
+}
+
+.receipt {
+    border: 2px solid black;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+
+    }
+    
+    #formoutput fieldset  {
+       display: flex;
+     justify-content: space-evenly;
+       flex-direction: column;
+       padding-top: 15px;
+       padding-bottom: 15px;
+    }
+
+    #formoutput fieldset p {
+      margin: 0;
+
+    }
+    
+
+    #formoutput fieldset h3{
+      margin-top: 5px;
+      margin-bottom: 5px;
+        
+    }
+    #formoutput  p{
+        margin: 5px;
+        
+    }
+
+  
